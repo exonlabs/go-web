@@ -10,7 +10,7 @@ import (
 var tplFunc = template.FuncMap{
 	"join":       strings.Join,
 	"replaceAll": strings.ReplaceAll,
-	"InStrSlice": inStrSlice,
+	"inStr":      inStrSlice,
 }
 
 func inStrSlice(s []string, v string) bool {

@@ -53,10 +53,12 @@ func main() {
 
 	srv := web.NewServer("WebPortal", nil)
 	srv.StaticPath = STATIC_PATH
+	srv.SessionFactory = web.NewSessionCookieFactory(nil)
 
 	views := []web.View{
 		&IndexView{}, &HomeView{}, &NotifyView{},
-		&AlertsView{},
+		&AlertsView{}, &InputForm{}, &DatagridView{},
+		&QueryBuilderView{}, &LoaderView{}, &LoginView{},
 	}
 	for _, view := range views {
 		srv.AddView(view)

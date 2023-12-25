@@ -16,7 +16,7 @@
         pagingType:"full_numbers",
         stateSave:true,
         search:{smart:false,regex:true,caseInsensitive:true},
-        lengthMenu:[["{{join .lenMenu "\",\""}}"],["{{replaceAll (join .lenMenu "\",\"") "-1" "All"}}"]],
+        lengthMenu:[[{{join .lenMenu ","}}],["{{replaceAll (join .lenMenu "\",\"") "-1" "All"}}"]],
         select:{style:'multi+shift',selector:'td.row-select>input[type=checkbox]'},
         columns:[
           {defaultContent:'',searchable:false,orderable:false,className:'dtctrl table-index px-0'},
