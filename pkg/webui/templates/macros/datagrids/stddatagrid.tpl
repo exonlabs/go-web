@@ -58,9 +58,9 @@
       $("#tblDataGrid_{{.id}}_length").prepend('<div class="dataTables_custombtns mb-2"><button id="btnReload_{{.id}}" class="btn btn-sm border px-3" title="Reload"><i class="fa fas fa-fw fa-refresh fa-sync-alt"></i></button>'+
         {{if .export.types}}
           '<div class="dropdown"><button class="btn btn-sm border dropdown-toggle" data-toggle="dropdown" title="Export"><i class="fa fas fa-fw fa-download fa-file-export"></i></button><div class="dropdown-menu dropdown-menu-right p-0 pb-1" style="min-width:100px"><h6 class="dropdown-header px-3">Export</h6>'+
-          {{if inStr .export.types "csv"}}'<button id="btnExpCSV_{{.id}}" class="dropdown-item pl-3 pr-4 py-1"><i class="fa fas fa-fw fa-file-text-o fa-file-csv"></i> csv</button>'+{{end}}
-          {{if inStr .export.types "xls"}}'<button id="btnExpXLS_{{.id}}" class="dropdown-item pl-3 pr-4 py-1"><i class="fa fas fa-fw fa-file-excel-o fa-file-excel"></i> excel</button>'+{{end}}
-          {{if inStr .export.types "print"}}'<button id="btnPRINT_{{.id}}" class="dropdown-item pl-3 pr-4 py-1"><i class="fa fas fa-fw fa-print"></i> print</button>'+{{end}}
+          {{if SlicesContains .export.types "csv"}}'<button id="btnExpCSV_{{.id}}" class="dropdown-item pl-3 pr-4 py-1"><i class="fa fas fa-fw fa-file-text-o fa-file-csv"></i> csv</button>'+{{end}}
+          {{if SlicesContains .export.types "xls"}}'<button id="btnExpXLS_{{.id}}" class="dropdown-item pl-3 pr-4 py-1"><i class="fa fas fa-fw fa-file-excel-o fa-file-excel"></i> excel</button>'+{{end}}
+          {{if SlicesContains .export.types "print"}}'<button id="btnPRINT_{{.id}}" class="dropdown-item pl-3 pr-4 py-1"><i class="fa fas fa-fw fa-print"></i> print</button>'+{{end}}
           '</div></div>'+
         {{end}}
         '<div class="dropdown"><button class="btn btn-sm border dropdown-toggle" data-toggle="dropdown" title="Columns"><i class="fa fas fa-fw fa-th-list"></i></button><div id="btnDataGridVis_{{.id}}" class="dropdown-menu dropdown-menu-right p-0" style="min-width:100px"><h6 class="dropdown-header px-3">Show / Hide</h6></div></div></div>');

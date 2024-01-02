@@ -20,7 +20,9 @@ func AddMenulink(menuBuffer map[int]MenuLink, index int,
 	} else {
 		// submenu link
 		if _, ok := menuBuffer[parent]; ok {
-			menuBuffer[parent].SubMenu[index] = MenuLink{Label: label, Icon: icon, URL: url}
+			menuBuffer[parent].SubMenu[index] = MenuLink{
+				Label: label, Icon: icon, URL: url,
+			}
 		}
 	}
 }

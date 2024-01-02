@@ -14,7 +14,7 @@ import (
 	"github.com/exonlabs/go-web/pkg/webui/macros"
 )
 
-const cdnURL = "/static/vendor"
+const cdnURL = "/static/webui/vendor"
 
 var (
 	sharedBuff sync.Map
@@ -40,8 +40,8 @@ func (v *IndexView) DoGet(ctx *web.Context) *web.Response {
 		"doc_title": "WebUI",
 		"menu":      menuBuffer,
 	}
-	render, err := webui.Render(params, "templates/html.tpl",
-		"templates/menuboard.tpl", "templates/mainpage.tpl")
+	render, err := webui.Render(params, "templates/webui/html.tpl",
+		"templates/webui/menuboard.tpl", "templates/mainpage.tpl")
 	if err != nil {
 		ctx.Logger.Error(err.Error())
 	}
@@ -752,8 +752,8 @@ func (v *LoginView) DoGet(ctx *web.Context) *web.Response {
 		}
 
 		html, err := webui.Render(params,
-			"templates/html.tpl",
-			"templates/simplepage.tpl",
+			"templates/webui/html.tpl",
+			"templates/webui/simplepage.tpl",
 			"templates/loginpage.tpl")
 		if err != nil {
 			ctx.Logger.Error(err.Error())

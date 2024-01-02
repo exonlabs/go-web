@@ -5,7 +5,7 @@ import (
 )
 
 var (
-	basicPath = "templates/macros/basic/"
+	basicPath = "templates/webui/macros/basic/"
 )
 
 func UiAlert(notifyType, msg string, icon, dismiss bool, styles string) (string, error) {

@@ -9,7 +9,7 @@ import (
 )
 
 var (
-	dataGridPath = "templates/macros/datagrids/"
+	dataGridPath = "templates/webui/macros/datagrids/"
 	stdRender    = map[string]any{"_": "_", "display": "d"}
 )
 

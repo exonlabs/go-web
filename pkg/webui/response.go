@@ -2,9 +2,7 @@ package webui
 
 import (
 	"encoding/json"
-	"math/rand"
 	"net/http"
-	"strconv"
 	"strings"
 
 	"github.com/exonlabs/go-web/pkg/web"
@@ -33,7 +31,8 @@ func Redirect(url string, blank bool) (*web.Response, error) {
 	return resp, nil
 }
 
-func Reply(ctx *web.Context, content string, doctitle string, params any) (*web.Response, error) {
+func Reply(ctx *web.Context, content, doctitle string,
+	params any) (*web.Response, error) {
 	resp := web.NewResponse(string(content))
 	if !ctx.Request.IsJson() {
 		return resp, nil
@@ -130,11 +129,4 @@ func GetFlashedMsg(ctx *web.Context) []map[string]any {
 	}
 	ctx.Session.Del("_flashes")
 	return flashes
-}
-
-func RandInt(index int) string {
-	min := 1
-	max := index
-	randVal := rand.Intn(max-min) + min
-	return strconv.Itoa(randVal)
 }

@@ -64,6 +64,14 @@ func main() {
 		srv.AddView(view)
 	}
 
+	// setup webui paths
+	go func() {
+		err := webui.PathsSetup(STATIC_PATH)
+		if err != nil {
+			logger.Error("%s", err.Error())
+		}
+	}()
+
 	if err := srv.Start(HOST, PORT); err != nil {
 		logger.Fatal(err.Error())
 		os.Exit(1)

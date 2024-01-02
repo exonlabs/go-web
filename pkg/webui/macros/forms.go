@@ -9,7 +9,7 @@ import (
 )
 
 var (
-	formPath = "templates/macros/forms/"
+	formPath = "templates/webui/macros/forms/"
 )
 
 func UiInputForm(options map[string]any, styles string) (string, error) {
